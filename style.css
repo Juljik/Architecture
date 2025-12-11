@@ -1,0 +1,583 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+/* Навигационное меню */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #4d9fff;
+}
+
+.nav-link.active {
+    color: #4d9fff;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #4d9fff;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+/* Адаптивное меню для мобильных устройств */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 15px 20px;
+        border-bottom: 1px solid #333;
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    /* Анимация иконки бургер-меню */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+}
+
+/* Добавляем отступ для контента, чтобы он не скрывался под фиксированным меню */
+.hero-section {
+    margin-top: 70px; /* Высота меню */
+    height: calc(100vh - 70px);
+}
+
+/* Для остальных секций */
+.about-section,
+.services-section,
+.portfolio-section {
+    scroll-margin-top: 70px; /* Для плавного скролла */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Герой-секция с видео на фоне */
+.hero-section {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+    padding: 20px;
+}
+
+.main-title {
+    font-size: 4.5rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.main-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* Раздел "О нас" */
+.about-section {
+    padding: 100px 0;
+    background-color: #000;
+}
+
+.about-content {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #FFFF;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #e6e6e6;
+    margin-bottom: 30px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: #e6e6e6;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.about-image {
+    flex: 0 0 540px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 1222px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Раздел "Услуги" */
+.services-section {
+    padding: 100px 0;
+    background-color: #000000;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #FFFFFF;
+    margin-bottom: 60px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.services-grid {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.service-card {
+    width: 616px;
+    height: 353px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-card:hover img {
+    transform: scale(1.05);
+}
+
+.text-card {
+    background-color: #e0e8f0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-card h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.text-card ul {
+    list-style-type: none;
+}
+
+.text-card li {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.text-card li:before {
+    content: "•";
+    color: #777;
+    position: absolute;
+    left: 0;
+}
+
+/* Раздел "Портфолио" */
+.portfolio-section {
+    padding: 100px 0;
+    background-color: #f8f8f8;
+}
+
+.portfolio-title {
+    font-size: 4rem;
+    font-weight: 300;
+    color: #222;
+    margin-bottom: 60px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.portfolio-content {
+    display: flex;
+    gap: 60px;
+}
+
+.portfolio-filters {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.filter-column h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #444;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filter-btn {
+    padding: 10px 15px;
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    color: #666;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #eee;
+    color: #333;
+}
+
+.filter-btn.active {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+}
+
+.portfolio-images {
+    flex: 0 0 464px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.portfolio-image {
+    width: 464px;
+    height: 465px;
+    overflow: hidden;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Футер */
+.footer {
+    padding: 30px 0;
+    background-color: #222;
+    color: #ddd;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Стилизация стандартных элементов управления видео */
+.video-background video::-webkit-media-controls-panel {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.video-background video::-webkit-media-controls-play-button,
+.video-background video::-webkit-media-controls-volume-slider,
+.video-background video::-webkit-media-controls-mute-button {
+    filter: brightness(2);
+}
+
+/* Адаптивность для кнопки звука */
+@media (max-width: 768px) {
+    .sound-toggle {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .sound-toggle i {
+        font-size: 1.2rem;
+    }
+}
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 540px;
+        margin: 0 auto;
+    }
+    
+    .about-image img {
+        height: auto;
+        max-height: 800px;
+    }
+    
+    .services-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .service-card {
+        width: 100%;
+        max-width: 616px;
+        height: auto;
+        min-height: 353px;
+    }
+    
+    .portfolio-content {
+        flex-direction: column;
+    }
+    
+    .portfolio-images {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 464px;
+        margin: 0 auto;
+    }
+    
+    .portfolio-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 3rem;
+    }
+    
+    .main-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .about-text h2,
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .about-text h3 {
+        font-size: 1.6rem;
+    }
+    
+    .portfolio-title {
+        font-size: 3rem;
+    }
+    
+    .filter-column h4 {
+        font-size: 1.3rem;
+    }
+    
+    .portfolio-filters {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    
+    .filter-column {
+        flex: 1 1 calc(50% - 30px);
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2.2rem;
+    }
+    
+    .about-section,
+    .services-section,
+    .portfolio-section {
+        padding: 60px 0;
+    }
+    
+    .portfolio-title {
+        font-size: 2.5rem;
+    }
+    
+    .filter-column {
+        flex: 1 1 100%;
+    }
+}

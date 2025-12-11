@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCHITECTURE SPACE</title>
+    <link rel="stylesheet" href="C:\Users\Juljik\Desktop\архитектура\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<!-- Навигационное меню -->
+<nav class="main-nav">
+    <div class="container">
+        <div class="nav-content">
+            <div class="logo">
+                <span>ARCHITECTURE SPACE</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Главная</a></li>
+                <li><a href="#about" class="nav-link">О компании</a></li>
+                <li><a href="#services" class="nav-link">Услуги</a></li>
+                <li><a href="#portfolio" class="nav-link">Портфолио</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+    <!-- Главная страница с видео на фоне -->
+    <section class="hero-section" id="home">
+    	<div class="video-background">
+    		<!-- Видео со звуком -->
+    		<video autoplay loop playsinline id="mainVideo" controls>
+        		<source src="C:\Users\Juljik\Desktop\архитектура\монтаж.mp4" type="video/mp4">
+        	Ваш браузер не поддерживает видео.
+    		</video>
+    		<div class="video-overlay"></div>
+	</div>
+        <div class="hero-content">
+            <h1 class="main-title">ARCHITECTURE SPACE</h1>
+            <p class="main-subtitle">Современные архитектурные решения</p>
+        </div>
+    </section>
+
+    <!-- Раздел "О нас" -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>О НАС</h2>
+                    <h3>ARCHITECTURE SPACE</h3>
+                    <p>Мы - команда профессионалов в области архитектуры и дизайна, создающая уникальные пространства с 2010 года. Наша философия основана на гармонии формы и функции, инновационных технологиях и экологичном подходе.</p>
+                    <p>Каждый наш проект - это тщательно продуманное пространство, которое сочетает в себе эстетику, комфорт и практичность. Мы работаем с частными и коммерческими клиентами, создавая архитектуру, которая вдохновляет и служит десятилетиями.</p>
+                    <p>Наша команда включает архитекторов, дизайнеров, инженеров и проектировщиков, которые совместно работают над каждым проектом, обеспечивая высокое качество на всех этапах реализации.</p>
+                </div>
+                <div class="about-image">
+                    <img src="C:\Users\Juljik\Desktop\архитектура\pict\о нас.png" alt="О компании Architecture Space" width="540" height="1222">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел "Услуги" -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title">УСЛУГИ</h2>
+            <div class="services-grid">
+                <div class="service-card image-card">
+                    
+                    <img src="C:\Users\Juljik\Desktop\архитектура\pict\услуги.png" alt="Архитектурное проектирование" width="616" height="353">
+                </div>
+                <div class="service-card text-card">
+                    <h3>Архитектурное проектирование</h3>
+                    <ul>
+                        <li>Разработка концепции и эскизного проекта</li>
+                        <li>Рабочая документация и чертежи</li>
+                        <li>3D-визуализация и моделирование</li>
+                        <li>Авторский надзор</li>
+                        <li>Проектирование общественных и жилых зданий</li>
+                        <li>Ландшафтная архитектура</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел "Портфолио" -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="container">
+            <h2 class="portfolio-title">ARCHITECTURE SPACE</h2>
+            <div class="portfolio-content">
+                <div class="portfolio-filters">
+                    <div class="filter-column">
+                        <h4>Год</h4>
+                        <div class="filter-options">
+                            <button class="filter-btn active" data-year="all">Все</button>
+                            <button class="filter-btn" data-year="2023">2023</button>
+                            <button class="filter-btn" data-year="2024">2024</button>
+                            <button class="filter-btn" data-year="2025">2025</button>
+                            <button class="filter-btn" data-year="2026">2026</button>
+                            <button class="filter-btn" data-year="2027">2027</button>
+                        </div>
+                    </div>
+                    <div class="filter-column">
+                        <h4>Тип</h4>
+                        <div class="filter-options">
+                            <button class="filter-btn" data-type="all">Все</button>
+                            <button class="filter-btn" data-type="residential">Жилые</button>
+                            <button class="filter-btn" data-type="commercial">Коммерческие</button>
+                            <button class="filter-btn" data-type="public">Общественные</button>
+                        </div>
+                    </div>
+                    <div class="filter-column">
+                        <h4>Размер</h4>
+                        <div class="filter-options">
+                            <button class="filter-btn" data-size="all">Все</button>
+                            <button class="filter-btn" data-size="small">До 1000 м²</button>
+                            <button class="filter-btn" data-size="medium">1000-5000 м²</button>
+                            <button class="filter-btn" data-size="large">От 5000 м²</button>
+                        </div>
+                    </div>
+                    <div class="filter-column">
+                        <h4>Материал</h4>
+                        <div class="filter-options">
+                            <button class="filter-btn" data-material="all">Все</button>
+                            <button class="filter-btn" data-material="concrete">Бетон</button>
+                            <button class="filter-btn" data-material="glass">Стекло</button>
+                            <button class="filter-btn" data-material="wood">Дерево</button>
+                            <button class="filter-btn" data-material="mixed">Комбинированные</button>
+                        </div>
+                    </div>
+                    <div class="filter-column">
+                        <h4>Статус</h4>
+                        <div class="filter-options">
+                            <button class="filter-btn" data-status="all">Все</button>
+                            <button class="filter-btn" data-status="completed">Завершён</button>
+                            <button class="filter-btn" data-status="in-progress">В процессе</button>
+                            <button class="filter-btn" data-status="planned">Запланирован</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-images">
+                    <div class="portfolio-image">
+                        <!-- Изображение будет загружено пользователем -->
+                        <img src="C:\Users\Juljik\Desktop\архитектура\pict\пр2.png" alt="Проект 1" width="464" height="465">
+                    </div>
+                    <div class="portfolio-image">
+                        
+                        <img src="C:\Users\Juljik\Desktop\архитектура\pict\пр1.png" alt="Проект 2" width="464" height="465">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 ARCHITECTURE SPACE. Все права защищены.</p>
+            <p>Контакты: info@architecture-space.com | +7 (XXX) XXX-XX-XX</p>
+        </div>
+    </footer>
+
+    <script src="C:\Users\Juljik\Desktop\архитектура\script.js"></script>
+</body>
+</html>
