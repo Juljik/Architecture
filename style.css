@@ -161,7 +161,6 @@ body {
 .portfolio-section {
     scroll-margin-top: 70px; /* Для плавного скролла */
 }
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -226,7 +225,7 @@ body {
 /* Раздел "О нас" */
 .about-section {
     padding: 100px 0;
-    background-color: #000;
+    background-color: #000000;
 }
 
 .about-content {
@@ -242,7 +241,7 @@ body {
 .about-text h2 {
     font-size: 2.5rem;
     font-weight: 300;
-    color: #FFFF;
+    color: #d4d4d4;
     margin-bottom: 20px;
     letter-spacing: 2px;
 }
@@ -250,13 +249,13 @@ body {
 .about-text h3 {
     font-size: 2rem;
     font-weight: 400;
-    color: #e6e6e6;
+    color: #d4d4d4;
     margin-bottom: 30px;
 }
 
 .about-text p {
     font-size: 1.1rem;
-    color: #e6e6e6;
+    color: #666;
     margin-bottom: 20px;
     line-height: 1.8;
 }
@@ -281,7 +280,7 @@ body {
 .section-title {
     font-size: 2.5rem;
     font-weight: 300;
-    color: #FFFFFF;
+    color: #444;
     margin-bottom: 60px;
     text-align: center;
     letter-spacing: 2px;
@@ -461,20 +460,6 @@ body {
 .video-background video::-webkit-media-controls-volume-slider,
 .video-background video::-webkit-media-controls-mute-button {
     filter: brightness(2);
-}
-
-/* Адаптивность для кнопки звука */
-@media (max-width: 768px) {
-    .sound-toggle {
-        width: 40px;
-        height: 40px;
-        bottom: 20px;
-        right: 20px;
-    }
-    
-    .sound-toggle i {
-        font-size: 1.2rem;
-    }
 }
 /* Адаптивность */
 @media (max-width: 1200px) {

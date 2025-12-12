@@ -27,26 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
             material: getActiveFilterValue('data-material'),
             status: getActiveFilterValue('data-status')
         };
-        
-        console.log('Активные фильтры:', activeFilters);
-        // Здесь будет логика фильтрации изображений портфолио
-        // В реальном проекте здесь будет обращение к базе данных или массиву проектов
-    }
-    
-    function getActiveFilterValue(dataAttribute) {
-        const activeButton = document.querySelector(`.filter-btn.active[${dataAttribute}]`);
-        return activeButton ? activeButton.getAttribute(dataAttribute) : 'all';
-    }
-    
-    // Заглушка для видео, если оно не загружено
-    const mainVideo = document.getElementById('mainVideo');
-    if (mainVideo) {
-        mainVideo.addEventListener('error', function() {
-            console.log('Видео не загружено. Убедитесь, что файл video/main-video.mp4 существует.');
-            // Можно показать заглушку или фоновое изображение
-            this.parentElement.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-        });
-    }
     // Функционал навигационного меню
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -60,7 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.toggle('active');
         });
     }
-          // Закрытие меню при клике на ссылку (на мобильных)
+    
+    // Закрытие меню при клике на ссылку (на мобильных)
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             if (window.innerWidth <= 768) {
@@ -75,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
         });
     });
+	
     
     // Активная ссылка при скролле
     window.addEventListener('scroll', function() {
@@ -109,7 +91,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+        
+        console.log('Активные фильтры:', activeFilters);
+        // Здесь будет логика фильтрации изображений портфолио
+        // В реальном проекте здесь будет обращение к базе данных или массиву проектов
+    }
     
+    function getActiveFilterValue(dataAttribute) {
+        const activeButton = document.querySelector(`.filter-btn.active[${dataAttribute}]`);
+        return activeButton ? activeButton.getAttribute(dataAttribute) : 'all';
+    }
+    
+        
     // Проверка загрузки изображений
     const images = document.querySelectorAll('img');
     images.forEach(img => {
